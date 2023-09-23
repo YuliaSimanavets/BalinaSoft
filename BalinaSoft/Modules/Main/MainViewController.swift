@@ -8,17 +8,11 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    
+    private var presenter: MainPresenterProtocol?
     private var activityIndicator = UIActivityIndicatorView()
 
-// Test model
-    private let mainArrayModel: [MainModel] = [
-        .init(name: "John", url: "h"),
-        .init(name: "Jon", url: "h"),
-        .init(name: "Jon", url: "h"),
-        .init(name: "Jon", url: "h"),
-        .init(name: "Jon", url: "h")
-    ]
+    private var mainArrayModel: [MainModel] = []
        
     private let mainHeaderTitle = "Make a choice 🔽"
     private let mainCollectionView: UICollectionView = {
@@ -43,15 +37,26 @@ class MainViewController: UIViewController {
                                     withReuseIdentifier: MainHeaderCollectionView.identifier)
         
         setupConstraints()
+        createActivityIndicator()
     }
 
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            mainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            mainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             mainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
+    }
+    
+    private func createActivityIndicator() {
+        activityIndicator.center = self.view.center
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+    }
+
+    func set(_ presenter: MainPresenterProtocol) {
+        self.presenter = presenter
     }
 }
 
@@ -103,5 +108,24 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
+    }
+}
+
+extension MainViewController: MainViewProtocol {
+    
+    func setMainData(items: [MainModel]) {
+        self.mainArrayModel = items
+        activityIndicator.stopAnimating()
+        mainCollectionView.reloadData()
+    }
+    
+    func failure(error: Error) {
+        let alertController = UIAlertController(title: "Something was wrong :(",
+                                                message: "Please, try again later",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        activityIndicator.stopAnimating()
     }
 }

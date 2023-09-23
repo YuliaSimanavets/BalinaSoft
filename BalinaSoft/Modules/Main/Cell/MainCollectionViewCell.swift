@@ -10,7 +10,7 @@ import UIKit
 
 struct MainModel {
     let name: String
-    let url: String
+    let id: Int
 }
 
 class MainCollectionViewCell: BaseCollectionViewCell {
