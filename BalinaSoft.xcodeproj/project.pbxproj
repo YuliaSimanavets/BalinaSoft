@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		CA9B9AC72ABF099E0099B66B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AC62ABF099E0099B66B /* AppDelegate.swift */; };
 		CA9B9AC92ABF099E0099B66B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AC82ABF099E0099B66B /* SceneDelegate.swift */; };
-		CA9B9ACB2ABF099E0099B66B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9ACA2ABF099E0099B66B /* ViewController.swift */; };
-		CA9B9ACE2ABF099E0099B66B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9B9ACC2ABF099E0099B66B /* Main.storyboard */; };
+		CA9B9ACB2ABF099E0099B66B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9ACA2ABF099E0099B66B /* MainViewController.swift */; };
 		CA9B9AD02ABF09A00099B66B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA9B9ACF2ABF09A00099B66B /* Assets.xcassets */; };
 		CA9B9AD32ABF09A00099B66B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA9B9AD12ABF09A00099B66B /* LaunchScreen.storyboard */; };
 		CA9B9ADE2ABF09A00099B66B /* BalinaSoftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9ADD2ABF09A00099B66B /* BalinaSoftTests.swift */; };
 		CA9B9AE82ABF09A00099B66B /* BalinaSoftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AE72ABF09A00099B66B /* BalinaSoftUITests.swift */; };
 		CA9B9AEA2ABF09A00099B66B /* BalinaSoftUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AE92ABF09A00099B66B /* BalinaSoftUITestsLaunchTests.swift */; };
+		CA9B9AFE2ABF0CAE0099B66B /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AF92ABF0CAE0099B66B /* MainModel.swift */; };
+		CA9B9AFF2ABF0CAE0099B66B /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AFB2ABF0CAE0099B66B /* MainCollectionViewCell.swift */; };
+		CA9B9B002ABF0CAE0099B66B /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AFC2ABF0CAE0099B66B /* MainPresenter.swift */; };
+		CA9B9B022ABF0CC30099B66B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B012ABF0CC30099B66B /* BaseCollectionViewCell.swift */; };
+		CA9B9B042ABF0E380099B66B /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B032ABF0E380099B66B /* MainHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +43,7 @@
 		CA9B9AC32ABF099E0099B66B /* BalinaSoft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalinaSoft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9B9AC62ABF099E0099B66B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9B9AC82ABF099E0099B66B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CA9B9ACA2ABF099E0099B66B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CA9B9ACD2ABF099E0099B66B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA9B9ACA2ABF099E0099B66B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CA9B9ACF2ABF09A00099B66B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA9B9AD22ABF09A00099B66B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA9B9AD42ABF09A00099B66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		CA9B9AE32ABF09A00099B66B /* BalinaSoftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalinaSoftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9B9AE72ABF09A00099B66B /* BalinaSoftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalinaSoftUITests.swift; sourceTree = "<group>"; };
 		CA9B9AE92ABF09A00099B66B /* BalinaSoftUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalinaSoftUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CA9B9AF92ABF0CAE0099B66B /* MainModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		CA9B9AFB2ABF0CAE0099B66B /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA9B9AFC2ABF0CAE0099B66B /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		CA9B9B012ABF0CC30099B66B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA9B9B032ABF0E380099B66B /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +109,8 @@
 			children = (
 				CA9B9AC62ABF099E0099B66B /* AppDelegate.swift */,
 				CA9B9AC82ABF099E0099B66B /* SceneDelegate.swift */,
-				CA9B9ACA2ABF099E0099B66B /* ViewController.swift */,
-				CA9B9ACC2ABF099E0099B66B /* Main.storyboard */,
+				CA9B9B012ABF0CC30099B66B /* BaseCollectionViewCell.swift */,
+				CA9B9AF62ABF0AAA0099B66B /* Modules */,
 				CA9B9ACF2ABF09A00099B66B /* Assets.xcassets */,
 				CA9B9AD12ABF09A00099B66B /* LaunchScreen.storyboard */,
 				CA9B9AD42ABF09A00099B66B /* Info.plist */,
@@ -125,6 +133,34 @@
 				CA9B9AE92ABF09A00099B66B /* BalinaSoftUITestsLaunchTests.swift */,
 			);
 			path = BalinaSoftUITests;
+			sourceTree = "<group>";
+		};
+		CA9B9AF62ABF0AAA0099B66B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B9AF72ABF0AB10099B66B /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CA9B9AF72ABF0AB10099B66B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B9ACA2ABF099E0099B66B /* MainViewController.swift */,
+				CA9B9AFC2ABF0CAE0099B66B /* MainPresenter.swift */,
+				CA9B9AF92ABF0CAE0099B66B /* MainModel.swift */,
+				CA9B9AFA2ABF0CAE0099B66B /* Cell */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CA9B9AFA2ABF0CAE0099B66B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B9AFB2ABF0CAE0099B66B /* MainCollectionViewCell.swift */,
+				CA9B9B032ABF0E380099B66B /* MainHeader.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +269,6 @@
 			files = (
 				CA9B9AD32ABF09A00099B66B /* LaunchScreen.storyboard in Resources */,
 				CA9B9AD02ABF09A00099B66B /* Assets.xcassets in Resources */,
-				CA9B9ACE2ABF099E0099B66B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA9B9ACB2ABF099E0099B66B /* ViewController.swift in Sources */,
+				CA9B9ACB2ABF099E0099B66B /* MainViewController.swift in Sources */,
+				CA9B9B042ABF0E380099B66B /* MainHeader.swift in Sources */,
+				CA9B9B022ABF0CC30099B66B /* BaseCollectionViewCell.swift in Sources */,
+				CA9B9AFF2ABF0CAE0099B66B /* MainCollectionViewCell.swift in Sources */,
 				CA9B9AC72ABF099E0099B66B /* AppDelegate.swift in Sources */,
 				CA9B9AC92ABF099E0099B66B /* SceneDelegate.swift in Sources */,
+				CA9B9AFE2ABF0CAE0099B66B /* MainModel.swift in Sources */,
+				CA9B9B002ABF0CAE0099B66B /* MainPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		CA9B9ACC2ABF099E0099B66B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA9B9ACD2ABF099E0099B66B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CA9B9AD12ABF09A00099B66B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +474,6 @@
 				INFOPLIST_FILE = BalinaSoft/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +501,6 @@
 				INFOPLIST_FILE = BalinaSoft/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
