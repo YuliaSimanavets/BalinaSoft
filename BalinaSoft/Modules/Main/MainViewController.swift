@@ -83,6 +83,13 @@ extension MainViewController: UICollectionViewDataSource {
         header.set(.init(titleText: item))
         return header
     }
+    
+    func tapOnCellAction(_ indexPath: IndexPath) {
+        let dataId = mainArrayModel[indexPath.item].id
+        let dataName = mainArrayModel[indexPath.item].name
+        let cameraViewController = ModuleBuilder.createCameraModule(with: dataId, with: dataName)
+        navigationController?.pushViewController(cameraViewController, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -107,7 +114,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        tapOnCellAction(indexPath)
     }
 }
 
