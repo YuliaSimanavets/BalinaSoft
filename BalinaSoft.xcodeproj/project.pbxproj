@@ -20,6 +20,9 @@
 		CA9B9B002ABF0CAE0099B66B /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AFC2ABF0CAE0099B66B /* MainPresenter.swift */; };
 		CA9B9B022ABF0CC30099B66B /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B012ABF0CC30099B66B /* BaseCollectionViewCell.swift */; };
 		CA9B9B042ABF0E380099B66B /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B032ABF0E380099B66B /* MainHeader.swift */; };
+		CA9B9B072ABF258D0099B66B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B062ABF258D0099B66B /* DataManager.swift */; };
+		CA9B9B0B2ABF26530099B66B /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B0A2ABF26530099B66B /* CameraViewController.swift */; };
+		CA9B9B0E2ABF269F0099B66B /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B0D2ABF269F0099B66B /* ModuleBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		CA9B9AFC2ABF0CAE0099B66B /* MainPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		CA9B9B012ABF0CC30099B66B /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA9B9B032ABF0E380099B66B /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
+		CA9B9B062ABF258D0099B66B /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CA9B9B0A2ABF26530099B66B /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		CA9B9B0D2ABF269F0099B66B /* ModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +115,8 @@
 			children = (
 				CA9B9AC62ABF099E0099B66B /* AppDelegate.swift */,
 				CA9B9AC82ABF099E0099B66B /* SceneDelegate.swift */,
-				CA9B9B012ABF0CC30099B66B /* BaseCollectionViewCell.swift */,
+				CA9B9B0C2ABF268E0099B66B /* Main */,
+				CA9B9B052ABF25830099B66B /* DataManager */,
 				CA9B9AF62ABF0AAA0099B66B /* Modules */,
 				CA9B9ACF2ABF09A00099B66B /* Assets.xcassets */,
 				CA9B9AD12ABF09A00099B66B /* LaunchScreen.storyboard */,
@@ -139,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				CA9B9AF72ABF0AB10099B66B /* Main */,
+				CA9B9B092ABF26360099B66B /* Camera */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -161,6 +169,31 @@
 				CA9B9B032ABF0E380099B66B /* MainHeader.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		CA9B9B052ABF25830099B66B /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B9B062ABF258D0099B66B /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		CA9B9B092ABF26360099B66B /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B9B0A2ABF26530099B66B /* CameraViewController.swift */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		CA9B9B0C2ABF268E0099B66B /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CA9B9B0D2ABF269F0099B66B /* ModuleBuilder.swift */,
+				CA9B9B012ABF0CC30099B66B /* BaseCollectionViewCell.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,12 +327,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA9B9ACB2ABF099E0099B66B /* MainViewController.swift in Sources */,
+				CA9B9B0B2ABF26530099B66B /* CameraViewController.swift in Sources */,
 				CA9B9B042ABF0E380099B66B /* MainHeader.swift in Sources */,
 				CA9B9B022ABF0CC30099B66B /* BaseCollectionViewCell.swift in Sources */,
+				CA9B9B0E2ABF269F0099B66B /* ModuleBuilder.swift in Sources */,
 				CA9B9AFF2ABF0CAE0099B66B /* MainCollectionViewCell.swift in Sources */,
 				CA9B9AC72ABF099E0099B66B /* AppDelegate.swift in Sources */,
 				CA9B9AC92ABF099E0099B66B /* SceneDelegate.swift in Sources */,
 				CA9B9AFE2ABF0CAE0099B66B /* MainModel.swift in Sources */,
+				CA9B9B072ABF258D0099B66B /* DataManager.swift in Sources */,
 				CA9B9B002ABF0CAE0099B66B /* MainPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
