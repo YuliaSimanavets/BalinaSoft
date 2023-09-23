@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     enum Primary {
         static var backColor: UIColor {
-            return "#de70fa".hexColor
+            return "#696b6a".hexColor
         }
         static var cellsColor: UIColor {
             return "#fcec53".hexColor
