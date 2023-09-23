@@ -37,7 +37,7 @@ class MainCollectionViewCell: BaseCollectionViewCell {
     override func setupView() {
         super.setupView()
         
-        contentView.backgroundColor = .lightGray
+        contentView.backgroundColor = UIColor.Primary.cellsColor
         contentView.layer.cornerRadius = 10
         
         contentView.addSubview(nameLabel)

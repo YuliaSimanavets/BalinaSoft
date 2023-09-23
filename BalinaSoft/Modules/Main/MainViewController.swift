@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray
+        view.backgroundColor = UIColor.Primary.backColor
         view.addSubview(mainCollectionView)
         mainCollectionView.delegate = self
         mainCollectionView.dataSource = self
@@ -117,15 +117,5 @@ extension MainViewController: MainViewProtocol {
         self.mainArrayModel = items
         activityIndicator.stopAnimating()
         mainCollectionView.reloadData()
-    }
-    
-    func failure(error: Error) {
-        let alertController = UIAlertController(title: "Something was wrong :(",
-                                                message: "Please, try again later",
-                                                preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
-        activityIndicator.stopAnimating()
     }
 }
