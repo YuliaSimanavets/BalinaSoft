@@ -26,7 +26,6 @@
 		CA9B9B0E2ABF269F0099B66B /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B0D2ABF269F0099B66B /* ModuleBuilder.swift */; };
 		CA9B9B112ABF33D70099B66B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B102ABF33D70099B66B /* UIColor.swift */; };
 		CA9B9B132ABF35B80099B66B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9B122ABF35B80099B66B /* String.swift */; };
-		CAE7674A2ABF46CB0010024B /* InfoCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE767492ABF46CB0010024B /* InfoCustomView.swift */; };
 		CAE7674D2ABF4B5F0010024B /* CameraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE7674C2ABF4B5F0010024B /* CameraPresenter.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +70,6 @@
 		CA9B9B0D2ABF269F0099B66B /* ModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		CA9B9B102ABF33D70099B66B /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		CA9B9B122ABF35B80099B66B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		CAE767492ABF46CB0010024B /* InfoCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCustomView.swift; sourceTree = "<group>"; };
 		CAE7674C2ABF4B5F0010024B /* CameraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,7 +194,6 @@
 				CA9B9B0A2ABF26530099B66B /* CameraViewController.swift */,
 				CAE7674C2ABF4B5F0010024B /* CameraPresenter.swift */,
 				CA21E48E2AC032800046A504 /* UploadData.swift */,
-				CAE7674B2ABF46CF0010024B /* View */,
 			);
 			path = Camera;
 			sourceTree = "<group>";
@@ -217,14 +214,6 @@
 				CA9B9B122ABF35B80099B66B /* String.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		CAE7674B2ABF46CF0010024B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CAE767492ABF46CB0010024B /* InfoCustomView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,7 +354,6 @@
 				CA9B9B042ABF0E380099B66B /* MainHeader.swift in Sources */,
 				CA9B9B022ABF0CC30099B66B /* BaseCollectionViewCell.swift in Sources */,
 				CA9B9B0E2ABF269F0099B66B /* ModuleBuilder.swift in Sources */,
-				CAE7674A2ABF46CB0010024B /* InfoCustomView.swift in Sources */,
 				CA9B9AFF2ABF0CAE0099B66B /* MainCollectionViewCell.swift in Sources */,
 				CA21E48F2AC032800046A504 /* UploadData.swift in Sources */,
 				CA9B9AC72ABF099E0099B66B /* AppDelegate.swift in Sources */,

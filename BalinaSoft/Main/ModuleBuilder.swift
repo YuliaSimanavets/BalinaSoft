@@ -19,7 +19,12 @@ final class ModuleBuilder {
     
     static func createCameraModule(with id: Int, with name: String) -> UIViewController {
         let view = CameraViewController()
-        view.set(id: id, name: name)
+        let dataManager = DataManager()
+        let presenter = CameraPresenter(view: view,
+                                        dataManager:dataManager,
+                                        userId: id,
+                                        userName: name)
+        view.set(presenter)
         return view
     }
 }
