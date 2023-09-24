@@ -8,7 +8,8 @@
 import Foundation
 
 protocol DataManagerProtocol {
-    func loadData(dataCollected: @escaping ([Content]) -> ())
+    func getData(completion: @escaping (Result<[Content], Error>) -> ())
+//    func post(uploadData: UploadData, completion: @escaping (Result<UploadData?, Error>) -> Void)
 }
 
 final class DataManager: DataManagerProtocol {
@@ -19,9 +20,9 @@ final class DataManager: DataManagerProtocol {
         components.host = "junior.balinasoft.com"
         return components
     }()
-
-    func loadData(dataCollected: @escaping ([Content]) -> ()) {
-
+    
+    func getData(completion: @escaping (Result<[Content], Error>) -> ()) {
+        
         components.path = "/api/v2/photo/type"
         guard let url = components.url?.absoluteString else { return }
 
@@ -31,7 +32,6 @@ final class DataManager: DataManagerProtocol {
 
             if error != nil {
                 print("error")
-
             } else if let response = response as? HTTPURLResponse,
                       response.statusCode == 200,
                       let responseData = data {
@@ -39,7 +39,7 @@ final class DataManager: DataManagerProtocol {
                 let data = try? JSONDecoder().decode(Main.self, from: responseData)
 
                 DispatchQueue.main.async {
-                    dataCollected(data?.content ?? [])
+                    completion(.success(data?.content ?? []))
                 }
             }
         }
