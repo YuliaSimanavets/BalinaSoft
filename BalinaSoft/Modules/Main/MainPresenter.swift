@@ -9,6 +9,7 @@ import Foundation
 
 protocol MainViewProtocol: AnyObject {
     func setMainData(items: [MainModel])
+    func failure(error: Error)
 }
 
 protocol MainPresenterProtocol {
@@ -30,12 +31,16 @@ final class MainPresenter: MainPresenterProtocol {
     }
     
     func getMainData() {
-        dataManager?.loadData(dataCollected: { [weak self] result in
+        dataManager?.getData { [weak self] result in
             guard let self else { return }
-            self.mainDataItems = result
-            self.generalArray = result.map({ .init(name: $0.name, id: $0.id) }).compactMap({ $0 })
-            
-            view?.setMainData(items: self.generalArray)
-        })
+            switch result {
+            case .success(let result):
+                self.mainDataItems = result
+                self.generalArray = result.map({ .init(name: $0.name, id: $0.id) }).compactMap({ $0 })
+                view?.setMainData(items: self.generalArray)
+            case .failure(let error):
+                view?.failure(error: error)
+            }
+        }
     }
 }

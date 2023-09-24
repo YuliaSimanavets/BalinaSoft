@@ -125,4 +125,14 @@ extension MainViewController: MainViewProtocol {
         activityIndicator.stopAnimating()
         mainCollectionView.reloadData()
     }
+    
+    func failure(error: Error) {
+        let alertController = UIAlertController(title: "Something was wrong :(",
+                                                message: "Please, try again later",
+                                                preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
+        print(error.localizedDescription)
+    }
 }
