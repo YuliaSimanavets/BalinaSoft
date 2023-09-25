@@ -11,6 +11,7 @@ import UIKit
 struct MainModel {
     let name: String
     let id: Int
+    let image: UIImage?
 }
 
 class MainCollectionViewCell: BaseCollectionViewCell {
@@ -18,6 +19,15 @@ class MainCollectionViewCell: BaseCollectionViewCell {
     static var identifier: String {
         return String(describing: MainCollectionViewCell.self)
     }
+    
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.cornerRadius = 8
+        imageView.backgroundColor = .white
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     private let nameLabel: UILabel = {
         let label = UILabel()
@@ -40,6 +50,7 @@ class MainCollectionViewCell: BaseCollectionViewCell {
         contentView.backgroundColor = UIColor.Primary.cellsColor
         contentView.layer.cornerRadius = 10
         
+        contentView.addSubview(imageView)
         contentView.addSubview(nameLabel)
         contentView.addSubview(chevronImageView)
         
@@ -48,8 +59,14 @@ class MainCollectionViewCell: BaseCollectionViewCell {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            imageView.heightAnchor.constraint(equalToConstant: 60),
+            imageView.widthAnchor.constraint(equalToConstant: 60),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+
+            nameLabel.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
+            nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 20),
             nameLabel.trailingAnchor.constraint(lessThanOrEqualTo: chevronImageView.leadingAnchor, constant: -20),
             
             chevronImageView.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
@@ -59,5 +76,11 @@ class MainCollectionViewCell: BaseCollectionViewCell {
     
     func set(_ data: MainModel) {
         nameLabel.text = data.name
+        imageView.image = data.image
+    }
+    
+    static func size(_ data: MainModel, containerSize: CGSize) -> CGSize {
+        let cellHeight: CGFloat = 40 + 20*2
+        return .init(width: containerSize.width - CGFloat(10), height: cellHeight)
     }
 }

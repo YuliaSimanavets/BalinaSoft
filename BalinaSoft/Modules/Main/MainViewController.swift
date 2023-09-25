@@ -101,9 +101,8 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let frame = collectionView.frame
-        let widthCell = frame.width - CGFloat(20)
-        let heightCell = CGFloat(50)
-        return CGSize(width: widthCell, height: heightCell)
+        let item = mainArrayModel[indexPath.item]
+        return MainCollectionViewCell.size(item, containerSize: frame.size)
     }
     
     func collectionView(_ collectionView: UICollectionView,

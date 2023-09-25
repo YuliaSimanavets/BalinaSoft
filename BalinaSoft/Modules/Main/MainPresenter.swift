@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MainViewProtocol: AnyObject {
     func setMainData(items: [MainModel])
@@ -36,7 +37,7 @@ final class MainPresenter: MainPresenterProtocol {
             switch result {
             case .success(let result):
                 self.mainDataItems = result
-                self.generalArray = result.map({ .init(name: $0.name, id: $0.id) }).compactMap({ $0 })
+                self.generalArray = result.map({ .init(name: $0.name, id: $0.id, image: UIImage(systemName: "star")) }).compactMap({ $0 })
                 view?.setMainData(items: self.generalArray)
             case .failure(let error):
                 view?.failure(error: error)
