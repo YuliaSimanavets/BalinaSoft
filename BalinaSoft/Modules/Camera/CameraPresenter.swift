@@ -34,19 +34,21 @@ final class CameraPresenter: CameraPresenterProtocol {
 
     func uploadData(photo: UIImage) {
         
-//        guard let photoData = photo.jpegData(compressionQuality: 0.2) else { return }
-//        let photoString = photoData.base64EncodedString()
-//
-//        let uploadData = UploadData(id: userId, name: userName, photo: photoString)
-//
-//        dataManager?.post(uploadData: uploadData) { result in
-//            switch result {
-//            case .success(let responseString):
-//                print("Response: \(responseString)")
-//            case .failure(let error):
-//                print("Error: \(error.localizedDescription)")
-//            }
-//        }
+        let imageData = photo.jpegData(compressionQuality: 0.1)
+        guard let image = imageData else { return }
+        
+        let uploadData = UploadData(id: userId, name: userName, photo: image)
+        
+        dataManager?.upload(uploadData) { [weak self] result in
+            switch result {
+            case .success(let responseString):
+                self?.view?.success()
+                print("Response: \(String(describing: responseString))")
+            case .failure(let error):
+                self?.view?.failure(error: error)
+                print("Error: \(error.localizedDescription)")
+            }
+        }
     }
 }
 

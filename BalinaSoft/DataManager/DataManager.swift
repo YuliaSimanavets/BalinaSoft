@@ -55,8 +55,7 @@ final class DataManager: DataManagerProtocol {
         
         request.setValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
         request.httpBody = createBodyWithParameters(parameters: uploadData,
-                                                    filePathKey: "file",
-                                                    imageDataKey: uploadData.photo)
+                                                    imageData: uploadData.photo)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
@@ -81,7 +80,7 @@ final class DataManager: DataManagerProtocol {
         task.resume()
     }
     
-    private func createBodyWithParameters(parameters: UploadData, filePathKey: String?, imageDataKey: Data) -> Data {
+    private func createBodyWithParameters(parameters: UploadData, imageData: Data) -> Data {
         let body = NSMutableData()
         // name
         body.appendString("\"name=\(parameters.name)\"")
@@ -89,7 +88,7 @@ final class DataManager: DataManagerProtocol {
         
         //photo
         body.appendString("\"photo=")
-        body.append(imageDataKey)
+        body.append(imageData)
         body.appendString(";type=image/jpeg\"")
         body.appendString("\t")
         
