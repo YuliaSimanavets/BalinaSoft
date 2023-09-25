@@ -42,9 +42,9 @@ class CameraViewController: UIViewController {
     private let postButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 10
-        button.setTitle("POST", for: .normal)
+        button.setTitle("Post", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = UIColor.Primary.cellsColor
+        button.backgroundColor = .lightGray
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -89,6 +89,8 @@ class CameraViewController: UIViewController {
     
     private func createActivityIndicator() {
         activityIndicator.center = self.view.center
+        activityIndicator.style = .medium
+        activityIndicator.color = .orange
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
     }
@@ -109,6 +111,7 @@ class CameraViewController: UIViewController {
     func didTapPost() {
         guard let image = imageView.image else { return }
         presenter?.uploadData(photo: image)
+        createActivityIndicator()
     }
 }
 
@@ -122,12 +125,10 @@ extension CameraViewController: UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true)
         
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            return
-        }
-        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
         imageView.image = image
         cameraImageView.isHidden = true
+        postButton.backgroundColor = UIColor.Primary.cellsColor
     }
 }
 
@@ -144,6 +145,5 @@ extension CameraViewController: CameraViewProtocol {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
-        print(error.localizedDescription)
     }
 }

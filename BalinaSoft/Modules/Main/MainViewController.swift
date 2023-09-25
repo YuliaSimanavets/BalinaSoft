@@ -51,6 +51,8 @@ class MainViewController: UIViewController {
     
     private func createActivityIndicator() {
         activityIndicator.center = self.view.center
+        activityIndicator.style = .medium
+        activityIndicator.color = .orange
         view.addSubview(activityIndicator)
         activityIndicator.startAnimating()
     }
