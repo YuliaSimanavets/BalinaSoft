@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA21E48F2AC032800046A504 /* UploadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA21E48E2AC032800046A504 /* UploadData.swift */; };
+		CA44FC032AC182140063C148 /* NSMutableData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA44FC022AC182140063C148 /* NSMutableData.swift */; };
 		CA9B9AC72ABF099E0099B66B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AC62ABF099E0099B66B /* AppDelegate.swift */; };
 		CA9B9AC92ABF099E0099B66B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9AC82ABF099E0099B66B /* SceneDelegate.swift */; };
 		CA9B9ACB2ABF099E0099B66B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9B9ACA2ABF099E0099B66B /* MainViewController.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		CA21E48E2AC032800046A504 /* UploadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadData.swift; sourceTree = "<group>"; };
+		CA44FC022AC182140063C148 /* NSMutableData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableData.swift; sourceTree = "<group>"; };
 		CA9B9AC32ABF099E0099B66B /* BalinaSoft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalinaSoft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA9B9AC62ABF099E0099B66B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA9B9AC82ABF099E0099B66B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			children = (
 				CA9B9B102ABF33D70099B66B /* UIColor.swift */,
 				CA9B9B122ABF35B80099B66B /* String.swift */,
+				CA44FC022AC182140063C148 /* NSMutableData.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 			files = (
 				CA9B9ACB2ABF099E0099B66B /* MainViewController.swift in Sources */,
 				CA9B9B132ABF35B80099B66B /* String.swift in Sources */,
+				CA44FC032AC182140063C148 /* NSMutableData.swift in Sources */,
 				CA9B9B112ABF33D70099B66B /* UIColor.swift in Sources */,
 				CAE7674D2ABF4B5F0010024B /* CameraPresenter.swift in Sources */,
 				CA9B9B0B2ABF26530099B66B /* CameraViewController.swift in Sources */,
