@@ -43,9 +43,9 @@ class MainViewController: UIViewController {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
             mainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            mainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            mainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            mainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            mainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            mainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
         ])
     }
     
