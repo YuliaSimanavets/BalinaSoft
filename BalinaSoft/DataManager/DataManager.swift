@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol DataManagerProtocol {
     func getData(completion: @escaping (Result<[Content], Error>) -> ())
+    func loadImage(from url: String?, completion: @escaping (UIImage?) -> Void)
     func upload(_ uploadData: UploadData, completion: @escaping (Result<UploadData?, Error>) -> Void)
 }
 
@@ -46,6 +48,27 @@ final class DataManager: DataManagerProtocol {
         task.resume()
     }
     
+    func loadImage(from url: String?, completion: @escaping (UIImage?) -> Void) {
+
+        guard let urlString = url, let imageURL = URL(string: urlString) else {
+            completion(UIImage(systemName: "questionmark.app.fill"))
+            return
+        }
+        let request = URLRequest(url: imageURL, timeoutInterval: Double.infinity)
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                return
+            }
+            guard let data = data, let image = UIImage(data: data) else {
+                return
+            }
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }
+        task.resume()
+    }
+
     func upload(_ uploadData: UploadData, completion: @escaping (Result<UploadData?, Error>) -> Void) {
 
         let url = URL(string: "https://junior.balinasoft.com/api/v2/photo")!
