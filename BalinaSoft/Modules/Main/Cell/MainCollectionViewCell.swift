@@ -23,8 +23,10 @@ class MainCollectionViewCell: BaseCollectionViewCell {
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 8
-        imageView.backgroundColor = .white
-        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .clear
+        imageView.tintColor = .lightGray
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

@@ -30,18 +30,34 @@ final class MainPresenter: MainPresenterProtocol {
         self.dataManager = dataManager
         getMainData()
     }
-    
+
     func getMainData() {
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
         dataManager?.getData { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let result):
-                self.mainDataItems = result
-                self.generalArray = result.map({ .init(name: $0.name, id: $0.id, image: UIImage(systemName: "star")) }).compactMap({ $0 })
-                view?.setMainData(items: self.generalArray)
+                for item in result {
+                    dispatchGroup.enter()
+                    dataManager?.loadImage(from: item.image) { image in
+                        defer {
+                            dispatchGroup.leave()
+                        }
+                        let viewModel = MainModel(name: item.name, id: item.id, image: image)
+                        self.generalArray.append(viewModel)
+                    }
+                }
+
             case .failure(let error):
                 view?.failure(error: error)
             }
+            dispatchGroup.leave()
+        }
+        
+        dispatchGroup.notify(queue: .main) {
+            self.view?.setMainData(items: self.generalArray)
         }
     }
 }
