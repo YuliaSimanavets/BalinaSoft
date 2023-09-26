@@ -15,7 +15,8 @@ class CameraViewController: UIViewController {
     
     private var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .lightGray
+        imageView.backgroundColor = .clear
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -24,7 +25,7 @@ class CameraViewController: UIViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "camera.badge.ellipsis")
         imageView.tintColor = .black
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -32,7 +33,7 @@ class CameraViewController: UIViewController {
     private let takePictureButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 10
-        button.setTitle("Take picture", for: .normal)
+        button.setTitle("Edit picture", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = UIColor.Primary.cellsColor
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +60,7 @@ class CameraViewController: UIViewController {
         view.addSubview(postButton)
         setupConstraints()
         
-        takePictureButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        takePictureButton.addTarget(self, action: #selector(didTapTakePictureButton), for: .touchUpInside)
         postButton.addTarget(self, action: #selector(didTapPost), for: .touchUpInside)
     }
     
@@ -100,13 +101,35 @@ class CameraViewController: UIViewController {
     }
     
     @objc
-    func didTapButton() {
+    func didTapTakePictureButton() {
+        let alertController = UIAlertController(title: "Hi:)",
+                                                message: "Edit picture",
+                                                preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "Take photo", style: .default, handler: openCamera)
+        let libraryAction = UIAlertAction(title: "Choose from library", style: .default, handler: openLibrary)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(cameraAction)
+        alertController.addAction(libraryAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
+    private func openLibrary(action: UIAlertAction) {
         let picker = UIImagePickerController()
-        picker.sourceType = .camera
+        picker.sourceType = .photoLibrary
+        picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
     }
-
+    
+    private func openCamera(action: UIAlertAction) {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true)
+    }
+    
     @objc
     func didTapPost() {
         guard let image = imageView.image else { return }
